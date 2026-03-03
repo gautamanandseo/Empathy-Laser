@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://empathylaserclinic.com/sitemap.xml

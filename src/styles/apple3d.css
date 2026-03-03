@@ -1,0 +1,66 @@
+/* Apple 3D Design System & Animations */
+:root {
+  --apple-3d-perspective: 1000px;
+  --apple-3d-rotate-limit: 10deg;
+  --apple-3d-transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --apple-3d-transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --apple-3d-shadow-base: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+  --apple-3d-shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+.apple-3d-container {
+  perspective: var(--apple-3d-perspective);
+  transform-style: preserve-3d;
+}
+
+.apple-3d-box {
+  transform-style: preserve-3d;
+  transition: var(--apple-3d-transition-smooth);
+  will-change: transform, box-shadow;
+  position: relative;
+}
+
+/* 3D Hover Effect Class - can be applied to any container */
+.hover-3d-lift {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.hover-3d-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--apple-3d-shadow-hover);
+  z-index: 10;
+}
+
+/* Gradient Overlay for Glass Effect */
+.glass-overlay {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(1px); /* Subtle blur */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Image Loading */
+.image-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Floating Animation */
+@keyframes float-y {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}

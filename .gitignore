@@ -1,0 +1,8 @@
+node_modules
+node_modules
+node_modules
+cd "c:\Users\DELL\Downloads\horizons-export-f9cda7f1-8bc9-4fb8-a1044f1605f0 (6)"
+git init
+git add .
+git commit -m "Initial commit"
+node_modules
